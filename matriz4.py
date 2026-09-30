@@ -1,4 +1,4 @@
-# Lee dos matrices 3x3 y muestra su suma.
+# Multiplicación de matrices cuadradas 2x2.
 
 def leer_entero(mensaje):
 	while True:
@@ -9,24 +9,27 @@ def leer_entero(mensaje):
 
 matriz1 = []
 print("Ingrese los valores de la primera matriz:")
-for i in range(3):
+for i in range(2):
 	matriz1.append([])
-	for j in range(3):
+	for j in range(2):
 		matriz1[i].append(leer_entero(f"Ingrese el valor [{i}][{j}]: "))
 
 matriz2 = []
 print("Ingrese los valores de la segunda matriz:")
-for i in range(3):
+for i in range(2):
 	matriz2.append([])
-	for j in range(3):
+	for j in range(2):
 		matriz2[i].append(leer_entero(f"Ingrese el valor [{i}][{j}]: "))
 
-matrizSuma = []
-for i in range(3):
-	matrizSuma.append([])
-	for j in range(3):
-		matrizSuma[i].append(matriz1[i][j] + matriz2[i][j])
+matrizResultado = []
+for i in range(2):
+	matrizResultado.append([])
+	for j in range(2):
+		valor = 0
+		for k in range(2):
+			valor += matriz1[i][k] * matriz2[k][j]
+		matrizResultado[i].append(valor)
 
-print("Matriz resultante de la suma:")
-for i in range(3):
-	print(matrizSuma[i])
+print("Matriz resultante de la multiplicación:")
+for fila in matrizResultado:
+	print(fila)
